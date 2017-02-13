@@ -2,7 +2,23 @@ var express = require("express");
 var app = express();
 var multer = require("multer");
 var http = require("http").Server(app);
+var cloudinary = require('cloudinary');
+var cloudinaryStorage = require('multer-storage-cloudinary');
 var PORT = process.env.PORT || 3003;
+
+
+cloudinary.config({ 
+  cloud_name: 'usama24', 
+  api_key: '687933813526549', 
+  api_secret: 'LiW4Lm4myKOYvguHQluzGxBnSj0' 
+});
+
+var storage = cloudinaryStorage({
+  cloudinary: cloudinary,
+  folder: 'folder-name',
+ 
+  
+})
 
 app.get("/", function (req, res) {
 
