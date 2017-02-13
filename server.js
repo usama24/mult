@@ -24,7 +24,7 @@ var parser = multer({ storage: storage });
 
 app.post('/upload', parser.array('images', 1), function (req, res) {
   //console.log(req.files);
-  res.send(req.files.url);
+  res.send(req.files);
 });
 
 // app.get("/", function (req, res) {
