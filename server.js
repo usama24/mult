@@ -5,6 +5,8 @@ var http = require("http").Server(app);
 var cloudinary = require('cloudinary');
 var cloudinaryStorage = require('multer-storage-cloudinary');
 var PORT = process.env.PORT || 3003;
+var array = [];
+var index = 1;
 
 
 cloudinary.config({ 
@@ -21,10 +23,16 @@ var storage = cloudinaryStorage({
 
 var parser = multer({ storage: storage });
  
+ 
 
 app.post('/upload', parser.array('images', 2), function (req, res) {
-  //console.log(req.files);
-  res.send(req.files);
+
+	for(var f of req.files) { 
+    	array.push(f.url); 
+    }
+  
+  res.json(req.files);
+
 });
 
 // app.get("/", function (req, res) {
