@@ -21,9 +21,9 @@ var storage = cloudinaryStorage({
 
 var parser = multer({ storage: storage });
  
- 
-app.post('/upload', parser.array('images', 10), function (req, res) {
-  console.log(req.files);
+
+app.post('/upload', parser.array('images', 1), function (req, res) {
+  //console.log(req.files);
 });
 
 // app.get("/", function (req, res) {
