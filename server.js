@@ -16,33 +16,39 @@ cloudinary.config({
 var storage = cloudinaryStorage({
   cloudinary: cloudinary,
   folder: 'folder-name',
+   
+})
+
+var parser = multer({ storage: storage });
  
-  
-})
-
-app.get("/", function (req, res) {
-
-     res.sendfile("index.html");
+ 
+app.post('/upload', parser.array('images', 10), function (req, res) {
+  console.log(req.files);
 });
 
-var storage = multer.diskStorage({
-	destination: function (req, file, cb) {
+// app.get("/", function (req, res) {
+
+//      res.sendfile("index.html");
+// });
+
+// var storage = multer.diskStorage({
+// 	destination: function (req, file, cb) {
 	 
-	 cb(null,__dirname+'/upload-folder');
-		},
-	filename: function (req, file, cb) {
-		cb(null, file.fieldname+".jpeg");
-	}	
+// 	 cb(null,__dirname+'/upload-folder');
+// 		},
+// 	filename: function (req, file, cb) {
+// 		cb(null, file.fieldname+".jpeg");
+// 	}	
 
-});
+// });
 
-var upload = multer({
-	storage: storage
-})
+// var upload = multer({
+// 	storage: storage
+// })
 
-app.post("/upload", upload.single("file"),function (res, req) {
-	// body...
-});
+// app.post("/upload", upload.single("file"),function (res, req) {
+// 	// body...
+// });
 
 http.listen(PORT,function () {
 	console.log("server is listening at "+PORT);
