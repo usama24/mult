@@ -25,13 +25,21 @@ var parser = multer({ storage: storage });
  
  
 
+
 app.post('/upload', parser.array('images', 2), function (req, res) {
 
 	for(var f of req.files) { 
     	array.push(f.url); 
     }
   
-  res.json(req.files);
+  res.json(array);
+
+
+// for(var i=0; i < 10 ;i++){
+// 	console.log(array[i]);
+// }
+
+
 
 });
 
