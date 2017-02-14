@@ -7,7 +7,6 @@ var cloudinaryStorage = require('multer-storage-cloudinary');
 var PORT = process.env.PORT || 3003;
 var array = [];
 var index = 1;
-var array = null;
 
 cloudinary.config({ 
   cloud_name: 'usama24', 
@@ -32,7 +31,7 @@ app.post('/upload', parser.array('images',2), function (req, res) {
     	array.push(f.url); 
     }
   
-  console.log(array);
+  
   res.json(array);
 
 });
