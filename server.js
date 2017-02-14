@@ -36,10 +36,11 @@ app.post('/upload', parser.array('images',1), function (req, res) {
 
 });
 
-// app.get("/", function (req, res) {
 
-//      res.sendfile("index.html");
-// });
+app.get("/url", function (req, res) {
+
+     res.json(array);
+});
 
 // var storage = multer.diskStorage({
 // 	destination: function (req, file, cb) {
