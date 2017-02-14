@@ -34,13 +34,15 @@ app.post('/upload', parser.array('images',1), function (req, res) {
   
   res.json(array);
 
+  
+
 });
 
 
-app.get("/url", function (req, res) {
+// app.get("/url", function (req, res) {
 
-     res.json(array);
-});
+//      res.json(array);
+// });
 
 // var storage = multer.diskStorage({
 // 	destination: function (req, file, cb) {
