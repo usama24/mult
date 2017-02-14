@@ -34,13 +34,6 @@ app.post('/upload', parser.array('images', 2), function (req, res) {
   
   res.json(array);
 
-
-// for(var i=0; i < 10 ;i++){
-// 	console.log(array[i]);
-// }
-
-
-
 });
 
 // app.get("/", function (req, res) {
