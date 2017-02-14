@@ -32,6 +32,7 @@ app.post('/upload', parser.single('images'), function (req, res) {
     	array.push(f.url); 
     }
   
+  console.log(array);
   res.json(array);
 
 });
