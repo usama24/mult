@@ -3,10 +3,12 @@ var app = express();
 var multer = require("multer");
 var http = require("http").Server(app);
 var cloudinary = require('cloudinary');
+var mongoose=require('mongoose');
 var cloudinaryStorage = require('multer-storage-cloudinary');
 var PORT = process.env.PORT || 3003;
 var array = [];
 var index = 1;
+var urls=mongoose.model('data');
 require('./data.js');
 cloudinary.config({ 
   cloud_name: 'usama24', 
@@ -28,7 +30,30 @@ var parser = multer({ storage: storage }).single('images');
 app.post('/upload', parser, function (req, res) {
 
 	 console.log("chal rha ha !");
-  res.json(req.file.url);
+  
+  urls.save(function(err){
+    if(err)
+    {
+      res.json(err);
+    }
+    else
+    {
+      res.json(req.file.url);
+    }
+  })
+
+});
+
+app.get('/upload',function(req,res){
+urls.find({},function(err,docs){
+  if(docs)
+  {
+    res.json(docs);
+  }
+  else{
+    res.json("No data");
+  }
+})
 
 });
 
