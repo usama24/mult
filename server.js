@@ -9,7 +9,7 @@ var PORT = process.env.PORT || 3003;
 var array = [];
 var index = 1;
 require('./data.js');
-
+var ursls=mongoose.model('newdata');
 
 cloudinary.config({ 
   cloud_name: 'usama24', 
