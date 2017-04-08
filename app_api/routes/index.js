@@ -23,6 +23,6 @@ var parser = multer({ storage: storage }).single('images');
 //Guard Validation
 var postingData=require('../controller/dataposting');
 
-router.post('/upload',parser,ctrlNotification.uploadingData);
+router.post('/upload',parser,postingData.uploadingData);
 
 module.exports = router;

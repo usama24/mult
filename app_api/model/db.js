@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 var gracefulShutdown;
-
+var dbURI;
 if (process.env.NODE_ENV === 'production') {
     dbURI = process.env.MONGOLAB_BRONZE_URI;
 }
