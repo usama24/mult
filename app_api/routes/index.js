@@ -25,6 +25,7 @@ var postingData=require('../controller/dataposting');
 
 router.post('/upload',parser,postingData.uploadingData);
 router.get('/upload',parser,postingData.gettingData);
+router.delete('/upload',parser,postingData.gettingData);
 
 
 module.exports = router;

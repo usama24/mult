@@ -40,3 +40,13 @@ module.exports.gettingData=function(req,res)
   })
 
 }
+
+module.exports.deletingData=function(req,res)
+{
+  ursls.remove({},function(err,removed)
+  {
+sendJSONresponse(res,200,{
+  "Message":"Deleted data"
+})
+  })
+}
