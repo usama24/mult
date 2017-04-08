@@ -22,7 +22,7 @@ var storage = cloudinaryStorage({
 
 var parser = multer({ storage: storage });
  
- 
+ console.log("chal rha ha !");
 
 
 app.post('/upload', parser.array('images',1), function (req, res) {
@@ -33,8 +33,6 @@ app.post('/upload', parser.array('images',1), function (req, res) {
   
   
   res.json(array);
-
-  
 
 });
 
