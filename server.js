@@ -32,10 +32,8 @@ app.post('/upload', parser, function (req, res) {
 
 	 console.log("chal rha ha !");
   
-  
       res.json(req.file.url);
-   
-
+  
 });
 
 
