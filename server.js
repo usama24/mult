@@ -32,8 +32,15 @@ app.post('/upload', parser, function (req, res) {
 
 	 console.log("chal rha ha !");
   
-      res.json(req.file.url);
-  
+     
+  ursls.save(function(err){
+    if(err){
+      res.json(err);
+    }
+    else{
+       res.json(req.file.url);
+    }
+  })
 });
 
 
