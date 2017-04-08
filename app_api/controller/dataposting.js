@@ -12,6 +12,6 @@ var sendJSONresponse = function(res, status, content) {
 module.exports.uploadingData=function(req,res)
 {
 sendJSONresponse(res,200,{
-  "Message":req.file.url;
+  "Message":req.file.url
 })
 }
