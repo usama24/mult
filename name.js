@@ -6,4 +6,4 @@ var url=new mongoose.Schema({
 		type:String
 	}
 });
-mongoose.model('data',url);
+mongoose.model('newdata',url);
