@@ -7,7 +7,7 @@ var cloudinaryStorage = require('multer-storage-cloudinary');
 var PORT = process.env.PORT || 3003;
 var array = [];
 var index = 1;
-
+require('./data.js');
 cloudinary.config({ 
   cloud_name: 'usama24', 
   api_key: '687933813526549', 
