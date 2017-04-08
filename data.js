@@ -45,4 +45,3 @@ process.on('SIGTERM', function() {
     });
 });
 
-require('./name');
