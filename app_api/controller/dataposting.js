@@ -11,7 +11,7 @@ var sendJSONresponse = function(res, status, content) {
        
 module.exports.uploadingData=function(req,res)
 {
-
+console.log("HELLO");
   ursls.save(function(err){
     if(err){
       res.json(err);
