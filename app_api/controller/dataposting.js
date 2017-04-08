@@ -11,7 +11,24 @@ var sendJSONresponse = function(res, status, content) {
        
 module.exports.uploadingData=function(req,res)
 {
-  ursls.find({},function(err,docs){
+ ursls.save(function(err){
+  if(err)
+  {
+    sendJSONresponse(res,401,{
+      "Message":err
+    })
+  }
+  else{
+    sendJSONresponse(res,200,{
+      "Message":req.file.url
+    })
+  }
+ })
+}
+
+module.exports.gettingData=function(req,res)
+{
+   ursls.find({},function(err,docs){
     if(!err)
     {
       sendJSONresponse(res,200,docs);
