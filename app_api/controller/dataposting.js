@@ -17,7 +17,9 @@ module.exports.uploadingData=function(req,res)
       res.json(err);
     }
     else{
-       res.json(req.file.url);
+      sendJSONresponse(res,200,{
+        "Message":req.file.url
+      })
     }
   })
 }
