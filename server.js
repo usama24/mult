@@ -22,12 +22,12 @@ var storage = cloudinaryStorage({
 
 var parser = multer({ storage: storage }).single('images');
  
- console.log("chal rha ha !");
+
 
 
 app.post('/upload', parser, function (req, res) {
 
-	
+	 console.log("chal rha ha !");
   res.json(req.file.url);
 
 });
