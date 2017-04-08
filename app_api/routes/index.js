@@ -24,8 +24,8 @@ var parser = multer({ storage: storage }).single('images');
 var postingData=require('../controller/dataposting');
 
 router.post('/upload',parser,postingData.uploadingData);
-router.get('/upload',parser,postingData.gettingData);
-router.delete('/upload',parser,postingData.deletingData);
+router.get('/upload',postingData.gettingData);
+router.delete('/upload',postingData.deletingData);
 
 
 module.exports = router;
