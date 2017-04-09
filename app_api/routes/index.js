@@ -23,7 +23,7 @@ resource_type: "video"
 //Guard Validation
 var postingData=require('../controller/dataposting');
 
-router.post('/upload',parser.upload('video'),postingData.uploadingData);
+router.post('/upload',parser.single('vide'),postingData.uploadingData);
 router.get('/upload',postingData.gettingData);
 router.delete('/upload',postingData.deletingData);
 
