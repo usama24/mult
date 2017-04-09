@@ -16,7 +16,7 @@ var storage = cloudinaryStorage({
    
 })
 
-var parser = multer({ storage: storage,
+var parser = multer({ storage: storage
 
  });
 
