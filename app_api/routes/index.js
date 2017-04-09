@@ -16,7 +16,7 @@ var storage = cloudinaryStorage({
    
 })
 
-var parser = multer({ storage: storage }).any('video');
+var parser = multer({ storage: storage }).single('video');
 
 //Guard Validation
 var postingData=require('../controller/dataposting');
