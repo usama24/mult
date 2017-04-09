@@ -12,12 +12,13 @@ cloudinary.config({
 
 var storage = cloudinaryStorage({
   cloudinary: cloudinary,
-  allowedFormats: ['jpg', 'mp4','png'],
+  allowedFormats: ['jpeg', 'mp4','png'],
   folder: 'folder-name',
    
 })
 
-var parser = multer({ storage: storage }).single('video');
+var parser = multer({ storage: storage }).any('video');
+console.log("");
  
 
 
