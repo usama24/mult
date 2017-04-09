@@ -16,12 +16,12 @@ var storage = cloudinaryStorage({
    
 })
 
-var parser = multer({ storage: storage});
+var parser = multer({ storage: storage},{ resource_type: "video" });
 
 //Guard Validation
 var postingData=require('../controller/dataposting');
 
-router.post('/upload',parser.single('vid',{ resource_type: "video" }),postingData.uploadingData);
+router.post('/upload',parser.single('vid'),postingData.uploadingData);
 router.get('/upload',postingData.gettingData);
 router.delete('/upload',postingData.deletingData);
 
