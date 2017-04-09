@@ -16,7 +16,7 @@ var storage = cloudinaryStorage({
    
 })
 
-var parser = multer({ storage: storage},"vidd.mp4",{ resource_type: "video" });
+var parser = multer({ storage: storage},{ resource_type: "video.mp4" });
 
 //Guard Validation
 var postingData=require('../controller/dataposting');
