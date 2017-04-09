@@ -12,14 +12,13 @@ cloudinary.config({
 
 var storage = cloudinaryStorage({
   cloudinary: cloudinary,
-  allowedFormats: ['jpeg', 'mp4','png'],
   folder: 'folder-name',
    
 })
 
-var parser = multer({ storage: storage }).any('video');
-console.log("");
- 
+var parser = multer({ storage: storage }).fields([{
+           name: 'video', maxCount: 1
+         }]);
 
 
 //Guard Validation
