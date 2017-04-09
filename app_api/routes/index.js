@@ -12,6 +12,7 @@ cloudinary.config({
 
 var storage = cloudinaryStorage({
   cloudinary: cloudinary,
+  allowedFormats: ['jpg', 'mp4','png'],
   folder: 'folder-name',
    
 })
