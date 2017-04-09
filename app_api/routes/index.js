@@ -16,7 +16,7 @@ var storage = cloudinaryStorage({
    
 })
 
-var parser = multer({ storage: storage }).single('images');
+var parser = multer({ storage: storage }).single('video');
  
 
 
