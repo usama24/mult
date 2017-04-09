@@ -16,9 +16,7 @@ var storage = cloudinaryStorage({
    
 })
 
-var parser = multer({ storage: storage
-
- });
+var parser = multer({ storage: storage});
 
 //Guard Validation
 var postingData=require('../controller/dataposting');
