@@ -33,12 +33,10 @@ module.exports.gettingData=function(req,res)
    ursls.find({},function(err,docs){
     if(!err)
     {
-      var value=docs;
+     
        ursls.remove({},function(err,removed)
   {
-sendJSONresponse(res,200,{
-  "Message":docs
-})
+sendJSONresponse(res,200,docs);
   })
     }
     else
