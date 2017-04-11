@@ -87,6 +87,19 @@ sendJSONresponse(res,200,docs);
 }
 
 
+module.exports.sendingpostingdeletingData=function(req,res)
+{
+
+  ursls2.remove({},function(err,removed)
+  {
+sendJSONresponse(res,200,{
+  "Message":"Deleted data"
+})
+  })
+}
+
+
+
 
 
 module.exports.deletingData=function(req,res)

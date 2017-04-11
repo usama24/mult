@@ -26,6 +26,7 @@ router.get('/upload',postingData.gettingData);
 router.delete('/upload',postingData.deletingData);
 router.post('/uploads',postingData.sendingData);
 router.get('/uploads',postingData.sendingpostingData);
+router.delete('/upload',postingData.sendingpostingdeletingData);
 
 
 
