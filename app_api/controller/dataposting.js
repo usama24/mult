@@ -44,7 +44,12 @@ sendJSONresponse(res,200,docs);
   })
 
 }
-
+module.exports.sendingData=function(req,res)
+{
+  sendJSONresponse(res,200,{
+    "Message":req.body.value
+  })
+}
 module.exports.deletingData=function(req,res)
 {
   ursls.remove({},function(err,removed)
