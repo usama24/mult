@@ -51,7 +51,7 @@ module.exports.sendingData=function(req,res)
 
 
 
-    console.log(req.body.usamaamjad);
+    console.log(req.body.value);
     sendJSONresponse(res,200,{
     "Message":req.body.value
   })
