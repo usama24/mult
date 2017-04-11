@@ -1,5 +1,6 @@
 var mongoose=require('mongoose');
 var ursls=mongoose.model('newdata');
+var ursls2=mongoose.model('user');
 
 
 var sendJSONresponse = function(res, status, content) {
@@ -47,17 +48,28 @@ sendJSONresponse(res,200,docs);
 module.exports.sendingData=function(req,res)
 {
     
- 
-
-
-
-    console.log(req.body.value);
+ var urlsss2=new ursls2();
+  urlsss2.username=req.body.value;
+ urlsss2.save(function(err){
+  if(err)
+  {
+    sendJSONresponse(res,401,{
+      "Message":err
+    })
+  }
+  else{
     sendJSONresponse(res,200,{
-    "Message":req.body.value
-  })
+      "Message":req.body.value
+    })
+  }
+ })
+
+
+
 }
 module.exports.deletingData=function(req,res)
 {
+
   ursls.remove({},function(err,removed)
   {
 sendJSONresponse(res,200,{

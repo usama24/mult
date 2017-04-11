@@ -46,3 +46,4 @@ process.on('SIGTERM', function() {
 });
 
 require('./name');
+require('./user_name');
