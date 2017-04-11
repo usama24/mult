@@ -46,7 +46,13 @@ sendJSONresponse(res,200,docs);
 }
 module.exports.sendingData=function(req,res)
 {
-  sendJSONresponse(res,200,{
+    
+ 
+
+
+
+    console.log(req.body.usamaamjad);
+    sendJSONresponse(res,200,{
     "Message":req.body.value
   })
 }
