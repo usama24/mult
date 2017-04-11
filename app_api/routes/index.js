@@ -25,6 +25,8 @@ router.post('/upload',parser.single('video'),postingData.uploadingData);
 router.get('/upload',postingData.gettingData);
 router.delete('/upload',postingData.deletingData);
 router.post('/uploads',postingData.sendingData);
+router.get('/uploads',postingData.sendingpostingData);
+
 
 
 module.exports = router;

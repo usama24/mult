@@ -67,6 +67,28 @@ module.exports.sendingData=function(req,res)
 
 
 }
+
+
+module.exports.sendingpostingData=function(req,res)
+{
+   ursls2.find({},function(err,docs){
+    if(!err)
+    {
+     
+       ursls2.remove({},function(err,removed)
+  {
+sendJSONresponse(res,200,docs);
+  })
+    }
+    else
+      throw err;
+  })
+
+}
+
+
+
+
 module.exports.deletingData=function(req,res)
 {
 
